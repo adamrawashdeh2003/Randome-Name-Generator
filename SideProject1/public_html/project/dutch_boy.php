@@ -1,0 +1,101 @@
+<?php 
+require_once(__DIR__ . "/../../partials/nav.php");
+?>
+
+<h1>Hallo</h1>
+
+<button>Generate the Name!</button>
+
+<h2>Name</h2>
+
+<script>
+const dutch_boy_name = 
+`Skylar
+Kyler
+Brooklynn
+Holland
+Koen
+Rip
+Haze
+Willem
+Dwight
+Hazen
+Dewit
+Kam
+Roosevelt
+Jef
+Witt
+Schuyler
+Hoover
+Colen
+Bas
+Schylar
+Kees
+Cuyler
+Gerritt
+DeWitt
+Schuylar
+Jong
+Kramer
+Christiaan
+Willam
+Emiel
+Bendt
+Dierck
+Douwe
+Hancock
+Jenkin
+Jenkyn
+Jenkyns
+Joke
+Roelof
+Skuyler
+Vandyke
+Greef
+Jib
+Barty
+Foltest
+Vilgefortz
+Sylens
+Ansem`;
+
+const new_name = dutch_boy_name.split(/[\s]/i);
+
+var btnRandom = document.querySelector('button');
+var result = document.querySelector('h2')
+
+function random_name(min, max) {
+    let result = Math.floor(Math.random() * (max - min) ) + min;
+    return result;
+}
+
+btnRandom.addEventListener('click', () => {
+    let index = random_name(0, new_name.length-1);
+    result.innerText = new_name[index];
+});
+
+</script>
+
+<style>
+h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+button {
+  background-color: #CD853F;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+h2 {
+    text-align: center;
+}
+
+body {
+    background-color: #DEB887;
+}
+
+</style>
